@@ -14,6 +14,7 @@ public class Deck {
     public void shuffle(){
         //making us do
         Random r = new Random();
+        //need 236 one card movements according to https://fredhohman.com/card-shuffling/ 
     }
 
     public Card getTopCard(){
