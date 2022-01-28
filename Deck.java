@@ -3,7 +3,7 @@ package blackjack;
 import java.util.Random;
 
 public class Deck {
-    private Card deck[];
+    private Card[] deck;
 
 
     public Deck(){
@@ -12,9 +12,16 @@ public class Deck {
     }
 
     public void shuffle(){
-        //making us do
         Random r = new Random();
         //need 236 one card movements according to https://fredhohman.com/card-shuffling/ 
+        final int SWITCHCOUNT = 100;
+        for(int i = 0; i<SWITCHCOUNT; i++){
+            int card1ID = r.nextInt(51);
+            int card2ID = r.nextInt(51);
+            Card temp = deck[card1ID];
+            deck[card1ID] = deck[card2ID];
+            deck[card2ID] = temp;
+        }
     }
 
     public Card getTopCard(){
@@ -31,6 +38,14 @@ public class Deck {
                 index++;
             }
         }
+    }
+
+    public String toString(){
+        String str = "";
+        for(int cnt = 0; cnt<deck.length; cnt++){
+            str += deck[cnt].getValue() + deck[cnt].getSuit() + ", ";
+        }
+        return str;
     }
 
     
