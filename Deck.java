@@ -14,10 +14,10 @@ public class Deck {
     public void shuffle(){
         Random r = new Random();
         //need 236 one card movements according to https://fredhohman.com/card-shuffling/ 
-        final int SWITCHCOUNT = 100;
+        final int SWITCHCOUNT = 200;
         for(int i = 0; i<SWITCHCOUNT; i++){
-            int card1ID = r.nextInt(51);
-            int card2ID = r.nextInt(51);
+            int card1ID = r.nextInt(52);
+            int card2ID = r.nextInt(52);
             Card temp = deck[card1ID];
             deck[card1ID] = deck[card2ID];
             deck[card2ID] = temp;
