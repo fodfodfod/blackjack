@@ -1,5 +1,5 @@
 package blackjack;
-
+import java.util.Scanner;
 public class Rules {
 
     public Rules(){
