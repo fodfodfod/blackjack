@@ -6,6 +6,6 @@ public class Rules {
         
     }
     public void startGame(){
-
+        Scanner kb = new Scanner(System.in);
     }
 }
