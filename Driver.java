@@ -6,10 +6,8 @@ public class Driver {
 
         r.startGame();
 
-        Deck d = new Deck();
         
-        System.out.println(d.toString());
-        d.shuffle();
-        System.out.println(d.toString());
+        
+        
     }
 }

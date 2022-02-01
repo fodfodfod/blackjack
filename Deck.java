@@ -13,7 +13,7 @@ public class Deck {
 
     public void shuffle(){
         Random r = new Random();
-        //need 236 one card movements according to https://fredhohman.com/card-shuffling/ 
+        
         final int SWITCHCOUNT = 200;
         for(int i = 0; i<SWITCHCOUNT; i++){
             int card1ID = r.nextInt(52);
@@ -25,7 +25,13 @@ public class Deck {
     }
 
     public Card getTopCard(){
-        return new Card("c", 1);
+        Card[] new_deck = Card[deck.length-1];
+        return new Card(deck[51]);
+        for(int i = 0; i<deck.length - 1; i++){
+            new_deck[i] = deck[i];
+        }
+        return deck[deck.length-1];
+        deck = new_deck;
     }
 
     public void setUp(){
