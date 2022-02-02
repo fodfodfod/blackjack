@@ -24,6 +24,8 @@ public class Dealer {
         return temp;
     }
     public void hitPlayer(){
+
         player[1].hit(deck.getTopCard());
+        System.out.println(player[1].getHandTotal());
     }
 }

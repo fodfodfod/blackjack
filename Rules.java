@@ -10,12 +10,13 @@ public class Rules {
         Dealer dealer = new Dealer();
 
         System.out.println("What is your name: ");
-        name = kb.next();
+        String name = kb.next();
         dealer.getPlayerName(name);
         while(true){
             System.out.println("hit or pass");
-            input = kb.next();
+            String input = kb.nextLine();
             if(input == "hit"){
+                System.out.println("player hit");
                 dealer.hitPlayer();
             }
         }
