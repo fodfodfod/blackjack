@@ -10,16 +10,36 @@ public class Rules {
         Dealer dealer = new Dealer();
 
         System.out.println("What is your name: ");
-        String name = kb.next();
+        String name = kb.nextLine();
         dealer.getPlayerName(name);
-        while(true){
+        String input = "hit";
+        dealer.hitPlayer();
+        dealer.hitPlayer();
+        while(dealer.player[1].getHandTotal()<22 && input.equals("hit")){
             System.out.println("hit or pass");
-            String input = kb.nextLine();
-            if(input == "hit"){
+            input = kb.nextLine();
+            if(input.equals("hit") ){
                 System.out.println("player hit");
                 dealer.hitPlayer();
             }
+            
         }
+        while(dealer.player[0].getHandTotal()<17){
+            dealer.hitDealer();
+        }
+
+        if(dealer.player[1].getHandTotal() > 21){
+            System.out.println("you lose");
+        }
+
+        else if((dealer.player[1].getHandTotal() == 21) || (dealer.player[1].getHandTotal()>dealer.player[0].getHandTotal())){
+            System.out.println("you win");
+        }
+
+        else{
+            System.out.println("you lose");
+        }
+
 
     }
 }

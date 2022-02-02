@@ -2,7 +2,7 @@ package blackjack;
 
 public class Dealer {
     private int whosTurn;
-    private Player[] player;
+    public Player[] player;
     private Deck deck;
 
 
@@ -26,6 +26,12 @@ public class Dealer {
     public void hitPlayer(){
 
         player[1].hit(deck.getTopCard());
-        System.out.println(player[1].getHandTotal());
+        System.out.println("you have that many points" + player[1].getHandTotal());
     }
+    public void hitDealer(){
+
+        player[0].hit(deck.getTopCard());
+        //System.out.println(player[0].getHandTotal());
+    }
+    
 }
