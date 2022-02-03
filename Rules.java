@@ -1,4 +1,4 @@
-package blackjack;
+package blackjack; 
 import java.util.Scanner;
 public class Rules {
 
