@@ -23,10 +23,12 @@ public class Dealer {
         whosTurn++;
         return temp;
     }
-    public void hitPlayer(){
+    public void hitPlayer(boolean announce){
 
         player[1].hit(deck.getTopCard());
-        System.out.println("you have that many points" + player[1].getHandTotal());
+        if(announce){
+            System.out.println("you have points " + player[1].getHandTotal() + " points");
+        }
     }
     public void hitDealer(){
 
